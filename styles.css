@@ -1,0 +1,229 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo con gradiente sutil */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #334155;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navbar sutil */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  color: #1e293b;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.3rem 0;
+}
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}
+.nav-links a:hover {
+  color: #3b82f6;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 2rem 1.5rem;
+}
+
+/* Tarjetas sutiles */
+.section {
+  margin-bottom: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Iconos más sutiles */
+.section .section-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.8rem;
+  margin-bottom: 0.2rem;
+  opacity: 0.7;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.intro h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+.intro h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+.intro p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+.social-links {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.social-links a {
+  color: #64748b;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+.social-links a:hover {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.job {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+.job:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.job h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 0.3rem;
+}
+.job span {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.job ul {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+.job li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+.contact-list li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+.contact-list a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-list a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  background: none;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.7rem 1rem;
+  }
+  main {
+    padding-top: 5.5rem;
+  }
+  .intro h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .section {
+    padding: 1.5rem 1rem;
+  }
+} 
